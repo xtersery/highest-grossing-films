@@ -56,10 +56,49 @@ header {
     color: var(--primary);
 }
 
+.wrapper {
+    max-width: 350px;
+}
+
 .search {
     position: relative;
-    width: 300px;
+    width: 350px;
     height: 40px;
+}
+
+.search .autocom-box {
+    position: absolute;
+    top: 100%;
+    max-height: 280px;
+    max-width: 350px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search.active .autocom-box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search.active .autocom-box li {
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.autocom-box li {
+    color: #d0d0d0;
+    list-style: none;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.autocom-box li:hover {
+    background: #2c2c2c;
+    color: var(--primary);
 }
 
 .search input {
@@ -146,7 +185,7 @@ header {
 
 .banner .content h4 span {
     padding: 0 10px;
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .banner .content h4 span:first-child {
@@ -165,13 +204,28 @@ header {
     border-radius: 2px;
 }
 
-.banner .content p {
-    font-size: 1em;
-    font-weight: 300;
-    line-height: 1.5em;
-    color: #ffffff;
-    margin: 10px 0 20px;
+.banner .content .flex-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
 }
+
+.banner .content .flex-container strong {
+    color: white;
+    flex-shrink: 0;
+	-webkit-text-stroke: 1px #F8F8F8;
+	text-shadow: 0px 2px 4px red;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.flex-container span {
+    flex-grow: 1; 
+    text-align: right;
+    font-size: 20px;
+  }
 
 .banner .content .button {
     position: relative;
@@ -318,4 +372,45 @@ header {
     cursor: pointer;
     filter: invert(1);
     max-width: 30px;
+}
+
+
+.clickable-element {
+position: relative;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+
+.clickable-element::after {
+content: attr(data-tooltip);
+position: absolute;
+bottom: 100%; 
+left: 50%;
+transform: translateX(-50%);
+padding: 5px 10px;
+background-color: #333;
+color: #fff;
+border-radius: 4px;
+font-size: 14px;
+white-space: nowrap;
+opacity: 0; 
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.clickable-element:hover::after {
+opacity: 1;
+visibility: visible;
+}
+
+.clickable-element.unavailable {
+cursor: not-allowed;
+}
+
+.clickable-element.unavailable::after {
+content: "" attr(data-tooltip); 
+background-color: #ff4444;
 }

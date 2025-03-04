@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <title>Movie Website</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">iMovies</a>
+      <ul class="nav">
+        <li>
+          <a href=""><i class="fa-solid fa-house"></i></a>
+        </li>
+        <li><a href="">Trends</a></li>
+        <li><a href="{{ url_for('movie_data') }}">My List</a></li>
+      </ul>
+      <div class="wrapper">
+        <div class="search">
+          <input type="text" placeholder="Search" id="search-bar" autocomplete="off"/>
+          <div class="autocom-box">
+          </div>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+    </header>
+    <div class="banner">
+      <div class="content avatar active" data-movie-title="Avatar">
+        <img src="{{ url_for('static', filename='images/avatar-title.webp') }}" alt="" class="movie-title" />
+        <h4>
+          <span></span><i></i><span></span><span></span>
+        </h4>
+        <p></p>
+        <div class="button">
+            <a href="#" class="clickable-element unavailable" 
+            data-tooltip="This feature is unavailable"><i class="fa-solid fa-play"></i> Watch</a>
+            <a href="#" class="add-to-list clickable-element unavailable"
+             data-tooltip="This feature is unavailable"><i class="fa-solid fa-plus"></i> My List</a>
+        </div>
+      </div>
+      <div class="content avengers-endgame" data-movie-title="Avengers: Endgame">
+        <img
+          src="{{ url_for('static', filename='images/avengers-endgame-title2.png') }}"
+          alt=""
+          class="movie-title"
+        />
+        <h4>
+          <span></span><i></i><span></span><span></span>
+        </h4>
+        <p></p>
+        <div class="button">
+          <a href="#" class="clickable-element unavailable" 
+            data-tooltip="This feature is unavailable"><i class="fa-solid fa-play"></i> Watch</a>
+            <a href="#" class="add-to-list clickable-element unavailable"
+             data-tooltip="This feature is unavailable"><i class="fa-solid fa-plus"></i> My List</a>
+        </div>
+      </div>
+      <div class="content avatar-2" data-movie-title="Avatar: The Way of Water">
+        <img 
+        src="{{ url_for('static', filename='images/avatar2-title.png') }}"
+         alt="" class="movie-title" />
+         <h4>
+          <span></span><i></i><span></span><span></span>
+        </h4>
+        <p></p>
+        <div class="button">
+          <a href="#" class="clickable-element unavailable" 
+          data-tooltip="This feature is unavailable"><i class="fa-solid fa-play"></i> Watch</a>
+          <a href="#" class="add-to-list clickable-element unavailable"
+           data-tooltip="This feature is unavailable"><i class="fa-solid fa-plus"></i> My List</a>
+        </div>
+      </div>
+      <div class="content inside-out-2" data-movie-title="Inside Out 2">
+        <img src="{{ url_for('static', filename='images/inside-out-2-title.svg') }}" alt="" class="movie-title" />
+        <h4>
+          <span></span><i></i><span></span><span></span>
+        </h4>
+        <p></p>
+        <div class="button">
+          <a href="#" class="clickable-element unavailable" 
+            data-tooltip="This feature is unavailable"><i class="fa-solid fa-play"></i> Watch</a>
+            <a href="#" class="add-to-list clickable-element unavailable"
+             data-tooltip="This feature is unavailable"><i class="fa-solid fa-plus"></i> My List</a>
+        </div>
+      </div>
+      <div class="content spiderman" data-movie-title="Spider-Man: No Way Home">
+        <img
+          src="{{ url_for('static', filename='images/spiderman-no-way-home-title.png') }}"
+          alt=""
+          class="movie-title"
+        />
+        <h4>
+          <span></span><i></i><span></span><span></span>
+        </h4>
+        <p></p>
+        <div class="button">
+          <a href="#" class="clickable-element unavailable" 
+            data-tooltip="This feature is unavailable"><i class="fa-solid fa-play"></i> Watch</a>
+            <a href="#" class="add-to-list clickable-element unavailable"
+             data-tooltip="This feature is unavailable"><i class="fa-solid fa-plus"></i> My List</a>
+        </div>
+      </div>
+      <div class="carousel-box">
+        <div class="carousel">
+          <div
+            class="carousel-item"
+            onClick="changeBg('bg-avatar-2009.jpg', 'avatar');"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onClick="changeBg('bg-avengers-endgame.png', 'avengers-endgame');"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onClick="changeBg('bg-avatar-2.jpg', 'avatar-2');"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/5/54/Avatar_The_Way_of_Water_poster.jpg/220px-Avatar_The_Way_of_Water_poster.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onClick="changeBg('bg-inside-out2-2.jpg', 'inside-out-2');"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Inside_Out_2_poster.jpg/220px-Inside_Out_2_poster.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onClick="changeBg('bg-spiderman.jpg', 'spiderman');"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Spider-Man_No_Way_Home_poster.jpg/220px-Spider-Man_No_Way_Home_poster.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <a href="#" class="play" onClick="toggleVideo();"
+        ><i class="fa-regular fa-circle-play clickable-element unavailable" 
+        data-tooltip="This feature is unavailable"
+        ></i> Watch Trailer</a
+      >
+      <ul class="sci">
+        <li>
+          <a href="#" class="clickable-element unavailable" data-tooltip="This feature is unavailable">
+            <i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="" class="clickable-element unavailable" data-tooltip="This feature is unavailable">
+            <i class="fa-brands fa-youtube"></i></a>
+        </li>
+        <li>
+          <a href="" class="clickable-element unavailable" data-tooltip="This feature is unavailable">
+            <i class="fa-brands fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="trailer">
+      <video src="#" muted controls="true" autoplay="true"></video>
+      <img
+        class="close"
+        src="{{ url_for('static', filename='images/close-btn.png') }}"
+        alt=""
+        onClick="toggleVideo();"
+      />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script
+      src="https://kit.fontawesome.com/968a36100f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      const imageBasePath = "{{ url_for('static', filename='images/movies/') }}";
+  </script>
+    <script src="{{ url_for('static', filename='js/data_store.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+      $(document).ready(function () {
+        $(".carousel").carousel();
+      });
+      document.querySelectorAll(".carousel-item").addEventListener("click", () => {
+      console.log("Button clicked!");
+      });
+    </script>
+  </body>
+</html>
