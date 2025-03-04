@@ -118,5 +118,5 @@ def my_list():
     data = fetch_db_data()
     return render_template("my_list.html", data=data)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+	app.run(debug=True, port=5000)
